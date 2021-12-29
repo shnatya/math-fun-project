@@ -3,7 +3,7 @@ import Answer from "./Answer";
 
 function Joke({joke}) {
     return (
-        <div> 
+        <div className="border-joke"> 
             <h2>
                 {joke.question}
             </h2>

@@ -35,3 +35,10 @@ code {
 .margin {
   margin: 1em;
 }
+.border-joke{
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 10px;
+  border-color: cadetblue;
+  size: flex;
+}

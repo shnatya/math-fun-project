@@ -14,7 +14,6 @@ function MainPage() {
 
     return (
         <main>
-            <NewJokeForm />
             <JokesList jokesDB={jokesDB}/>
         </main>
     )
