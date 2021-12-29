@@ -20,7 +20,7 @@ code {
   background-color: azure;
   size: flex;
 }
-.border-input{
+.input{
   border-style: solid;
   border-width: 1px;
   border-radius: 10px;
@@ -29,5 +29,9 @@ code {
 .flex-container {
   display: flex;
   flex-direction: row;
-  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.margin {
+  margin: 1em;
 }
