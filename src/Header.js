@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
     return (
         <h1>
-            Fun Math 😂
+            Fun Math 😻
         </h1>
     )
 }
