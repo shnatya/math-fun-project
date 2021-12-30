@@ -2,21 +2,25 @@ import React from "react";
 import LetterCard from "./LetterCard"
 
 function Answer({answerOfJoke, settings}) {
-    const arrayOfLetters = answerOfJoke.split("")
-    const arrayLength = arrayOfLetters.length;
+    const originalArrayOfLetters = answerOfJoke.split("")
+    const arrayToShuffle = [...originalArrayOfLetters]
+    const arrayLength = originalArrayOfLetters.length;
+
+
     
     for(let i = arrayLength-1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
 
-        let temperateVar = arrayOfLetters[i];
-        arrayOfLetters[i] = arrayOfLetters[j];
-        arrayOfLetters[j] = temperateVar;
-        console.log(arrayOfLetters)
+        let temperateVar = arrayToShuffle[i];
+        arrayToShuffle[i] = arrayToShuffle[j];
+        arrayToShuffle[j] = temperateVar;
+        console.log(arrayToShuffle)
      }
-     
+     console.log(arrayToShuffle)
+     console.log(originalArrayOfLetters)
     return (
         <div className='flex-container'>
-            {arrayOfLetters.map((letter, index) => <LetterCard letter={letter} key={index} settings={settings} />)}
+            {arrayToShuffle.map((letter, index) => <LetterCard letter={letter} key={index} settings={settings} />)}
         </div>
     )
 }
