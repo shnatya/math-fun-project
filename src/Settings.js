@@ -26,9 +26,9 @@ function Settings({setValue}) {
 
             <label>Choose an operation:</label>
             <select onChange={handleValue} name="operation" className="margin">
-                <option value="all">All</option>
-                <option value="addition">Addition</option>
-                <option value="subtraction">Subtraction</option>
+                <option value="+">Addition</option>
+                <option value="-">Subtraction</option>
+                <option value="*">Multiplication</option>
             </select>
             <NavLink
             exact

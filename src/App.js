@@ -12,7 +12,7 @@ function App() {
   const [settings, setSettings] = useState({
     min: 1,
     max: 1000,
-    operation: "all",
+    operation: "+",
   })
 
     useEffect(() => 
