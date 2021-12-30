@@ -1,11 +1,12 @@
 import React from "react";
 
-function LetterCard({letter}) {
-    const min = 100;
-    const max = 999; 
-
-    const number1 = Math.floor(Math.random()*(max-min)+min)
-    const number2 = Math.floor(Math.random()*(max-min)+min)
+function LetterCard({letter, settings}) {
+    const {min, max, operation} = settings;
+  
+    const number1 = Math.floor(Math.random()*(max-min) + parseInt(min))
+    console.log(number1)
+    const number2 = Math.floor(Math.random()*(max-min) + parseInt(min))
+    console.log(number2)
    
     const maxNumber = Math.max(number1, number2)
     const minNumber = Math.min(number1, number2)

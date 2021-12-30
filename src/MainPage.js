@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import NewJokeForm from "./NewJokeForm";
-import JokesList from "./JokesList"
+import Joke from "./Joke"
 
 function MainPage() {
     const [jokesDB, setJokesDB] = useState([])
+    const [jokeIndex, setJokeIndex] = useState(0)
 
     useEffect(() => 
         fetch("http://localhost:3000/jokes")
@@ -11,10 +11,10 @@ function MainPage() {
         .then(data => setJokesDB(data))
         , []
     )
-
+    const jokeToDisplay = jokesDB[jokeIndex]
     return (
         <main>
-            <JokesList jokesDB={jokesDB}/>
+            <Joke joke={jokeToDisplay}/>
         </main>
     )
 }
