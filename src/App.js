@@ -1,8 +1,8 @@
 import './App.css';
 import Header from './Header'
-import MainPage from './MainPage';
 import { Route, Switch } from "react-router-dom";
 import NewJokeForm from './NewJokeForm';
+import Settings from './Settings';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path='/settings'>
-          <MainPage />
+          <Settings />
         </Route>
         <Route exact path='/addajoke'>
           <NewJokeForm />
