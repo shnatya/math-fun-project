@@ -1,8 +1,8 @@
 import React from "react";
 import LetterCard from "./LetterCard"
 
-function Answer({answer, settings}) {
-    const arrayOfLetters = answer.split("")
+function Answer({answerOfJoke, settings}) {
+    const arrayOfLetters = answerOfJoke.split("")
     
     return (
         <div className='flex-container'>

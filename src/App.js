@@ -11,7 +11,7 @@ function App() {
   const [jokeIndex, setJokeIndex] = useState(0)
   const [settings, setSettings] = useState({
     min: 1,
-    max: 10000,
+    max: 1000,
     operation: "all",
   })
 

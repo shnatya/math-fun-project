@@ -2,7 +2,7 @@ import React from "react";
 
 function LetterCard({letter, settings}) {
     const {min, max, operation} = settings;
-  
+
     const number1 = Math.floor(Math.random()*(max-min) + parseInt(min))
     console.log(number1)
     const number2 = Math.floor(Math.random()*(max-min) + parseInt(min))

@@ -5,8 +5,8 @@ const linkStyles = {
     display: "inline-block",
     background: "pink",
     color: "brown",
-    width: "150px",
-    padding: "12px",
+    width: "70px",
+    padding: "8px",
     margin: "0 6px 6px",
     "border-radius": "10px",
 }
@@ -18,10 +18,6 @@ function Settings({setValue}) {
         console.log(event.target.value)
     }
     
-    function handleChangeOperation(event) {
-        console.log(event.target.value)
-    }
-    
     return (
         <div className="border margin">
             
@@ -29,7 +25,7 @@ function Settings({setValue}) {
             <input onChange={handleValue} name="max" type="number" placeholder="Max value" />
 
             <label>Choose an operation:</label>
-            <select onChange={handleChangeOperation} name="operation" className="margin">
+            <select onChange={handleValue} name="operation" className="margin">
                 <option value="all">All</option>
                 <option value="addition">Addition</option>
                 <option value="subtraction">Subtraction</option>
