@@ -13,7 +13,7 @@ function Letters({collectingObjects}) {
         shuffledArray[i] = shuffledArray[j];
         shuffledArray[j] = temperateVar;
      }
-
+     console.log(shuffledArray)
     return (
         <div className='flex-container'>
             {shuffledArray.map((obj, index) =>

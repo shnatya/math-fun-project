@@ -1,7 +1,7 @@
 import React from "react";
 
 function Circle({obj}) {
-  const {letter, min, max, total} = obj;
+  const {letter, total} = obj;
     return (
         <div>
             <h1>{letter}</h1>

@@ -6,7 +6,7 @@ function Joke({joke, settings}) {
     const {min, max, operation} = settings;
     const originalArrayOfLetters = joke.answer.split("")
     
-     const collectingObjects = originalArrayOfLetters.map(letter => {
+     const collectingObjects = originalArrayOfLetters.map((letter, index) => {
         const objectForLetterCard = {}
         
         const number1 = Math.floor(Math.random()*(max-min) + parseInt(min))
@@ -17,17 +17,20 @@ function Joke({joke, settings}) {
 
         if(operation === "+") {
             let sum = minNumber + maxNumber;
-            Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {max: maxNumber}, {total: sum}, {sign: "+"})
+            Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {index: index},
+                                               {max: maxNumber}, {total: sum}, {sign: "+"})
             return objectForLetterCard;
         }
         else if(operation === "-") {
             let diff = maxNumber - minNumber;
-            Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {max: maxNumber}, {total: diff}, {sign: "-"})
+            Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {index: index}, 
+                                               {max: maxNumber}, {total: diff}, {sign: "-"})
             return objectForLetterCard;
         }
         else if(operation === "*") {
             let multi = maxNumber * minNumber;
-            Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {max: maxNumber}, {total: multi}, {sign: "*"})
+            Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {index: index},
+                                                {max: maxNumber}, {total: multi}, {sign: "*"})
             return objectForLetterCard;
         }
     })
