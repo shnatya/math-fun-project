@@ -1,13 +1,17 @@
 import React from "react";
 
-function LetterCard({obj}) {
+function LetterCard({obj, checkTotal}) {
 
+    function onChange(event) {
+        console.log(event.target.value)
+        checkTotal(event.target.value, obj)
+    }
     return (
         <div className='margin border'>
             <form >
                 <h1>{obj.letter}</h1>
                 <h2 className='margin'>{obj.max} {obj.sign} {obj.min}</h2>
-                <input className='margin input' type="text" name="answer" size='10' placeholder="your answer"/>
+                <input onChange={onChange} className='margin input' type="text" name="answer" size='10' placeholder="?"/>
             </form>
         </div>
     )

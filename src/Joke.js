@@ -35,9 +35,6 @@ function Joke({joke, settings}) {
         }
     })
     console.log(collectingObjects)
-     
-
-    
     
     return (
         <div className="border-joke"> 

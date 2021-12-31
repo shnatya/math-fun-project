@@ -13,7 +13,7 @@ const linkStyles = {
 
 function Header() {
     return (
-        <div>
+        <div className="bottom">
             <h1>
                 Fun Math 😻
             </h1>

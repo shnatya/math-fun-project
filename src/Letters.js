@@ -14,10 +14,20 @@ function Letters({collectingObjects}) {
         shuffledArray[j] = temperateVar;
      }
      console.log(shuffledArray)
+     
+    function checkTotal(answer, obj) {
+        
+        if(parseInt(answer) === obj.total) {
+            console.log("Great!")
+            return true
+        }else{
+            console.log("Oops!")
+        }
+    } 
     return (
         <div className='flex-container'>
             {shuffledArray.map((obj, index) =>
-                <LetterCard obj={obj} key={index} />)}
+                <LetterCard obj={obj} key={index} checkTotal={checkTotal}/>)}
         </div>
     )
 }

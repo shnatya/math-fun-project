@@ -25,6 +25,7 @@ code {
   border-width: 1px;
   border-radius: 10px;
   size: flex;
+  text-align: center;
 }
 .flex-container {
   display: flex;
@@ -41,4 +42,7 @@ code {
   border-radius: 10px;
   border-color: cadetblue;
   size: flex;
+}
+.bottom{
+  padding-bottom: 100px;
 }
