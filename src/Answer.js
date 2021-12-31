@@ -1,14 +1,14 @@
 import React from "react";
 import Circle from "./Circle";
+import LetterCard from "./LetterCard";
 
-function Answer({}) {
-      //{collectingObjects.map((obj, index) => <Circle key={index} obj={obj} />)}
-      
-    return (
+function Answer({collectingObjects}) {
+     return (
         <div className='flex-container'>
-          <h1>Hi</h1>
+        {collectingObjects.map((obj, index) =>
+            <Circle obj={obj} key={index} />)}
         </div>
-    )
+     )
 }
 
 export default Answer;
