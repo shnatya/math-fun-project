@@ -1,10 +1,12 @@
 import React from "react";
 import Circle from "./Circle";
 
-function Answer({originalArray}) {
+function Answer({}) {
+      //{collectingObjects.map((obj, index) => <Circle key={index} obj={obj} />)}
+      
     return (
         <div className='flex-container'>
-            {originalArray.map((letter, index) => <Circle key={index} letter={letter} />)}
+          <h1>Hi</h1>
         </div>
     )
 }
