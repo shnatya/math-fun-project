@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Letters from "./Letters";
 import Answer from "./Answer";
 
-function Joke({ joke, settings }) {
+function Joke({ joke, settings, handleNextJoke }) {
 
     const [arrayOfObjectsForLetters, setArrayOfObjectsForLetters] = useState([])
     const [shuffledArray, setShuffledArray] = useState([])
@@ -60,7 +60,9 @@ function Joke({ joke, settings }) {
 
     }, [min, max, operation, id]) 
 
-    
+    function onClick() {
+        handleNextJoke();
+    }
     function checkTotal(answer, obj) {
         
         if(parseInt(answer) === obj.total) {
@@ -85,6 +87,7 @@ function Joke({ joke, settings }) {
         <>
             
             <div className="border-joke"> 
+                <input type="reset" className="arrow" onClick={onClick} value="Next" />
                 <h1 className="font">{question}</h1>
                 <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}/>
                 <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} />

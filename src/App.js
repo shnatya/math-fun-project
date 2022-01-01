@@ -29,7 +29,7 @@ function App() {
       [name]: value,
     })
   }
-  function onClick() {
+  function handleNextJoke() {
     const DBlength = jokesDB.length;
     if(jokeIndex === DBlength - 2 || jokeIndex < DBlength - 2) {
       setJokeIndex(jokeIndex + 1);
@@ -40,7 +40,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1 className="arrow" onClick={onClick}>&#11157;</h1>
       <Switch>
         <Route exact path='/settings'>
           <Settings settings={settings} setValue={setValue}/>
@@ -49,7 +48,7 @@ function App() {
           <NewJokeForm />
         </Route>
         <Route exact path="/joke">
-          <Joke joke={jokeToDisplay} settings={settings}/>
+          <Joke joke={jokeToDisplay} settings={settings} handleNextJoke={handleNextJoke}/>
         </Route>
       </Switch>
     </div>
