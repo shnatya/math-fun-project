@@ -7,11 +7,13 @@ const linkStyles = {
     color: "brown",
     width: "70px",
     padding: "8px",
-    margin: "0 6px 6px",
-    "border-radius": "10px",
+    margin: "30px",
+    borderRadius: "10px",
 }
 
-function Settings({setValue}) {
+function Settings({ settings, setValue }) {
+
+    const {min, max, operation} = settings
 
     function handleValue(event){
         setValue(event.target.name, event.target.value)
@@ -19,17 +21,20 @@ function Settings({setValue}) {
     }
     
     return (
-        <div className="border margin">
+        <div className="settings">
             
-            <input onChange={handleValue} name="min" type="number" placeholder="Min value" />
-            <input onChange={handleValue} name="max" type="number" placeholder="Max value" />
-
-            <label>Choose an operation:</label>
-            <select onChange={handleValue} name="operation" className="margin">
-                <option value="+">Addition</option>
-                <option value="-">Subtraction</option>
-                <option value="*">Multiplication</option>
-            </select>
+            <label className="lable">Min value: </label>
+            <input style={{marginRight: "100px"}} onChange={handleValue} name="min" type="number" value={min} placeholder="Min value" />
+            <label className="lable">Max value: </label>
+            <input onChange={handleValue} name="max" type="number" value={max} placeholder="Max value" />
+            <div style={{display: "grid"}} className="settings">
+                <label style={{marginTop: "40px"}} className="lable">Choose an operation:</label>
+                <select className="margin" onChange={handleValue} name="operation" value={operation} >
+                    <option value="+">Addition</option>
+                    <option value="-">Subtraction</option>
+                    <option value="*">Multiplication</option>
+                </select>
+            </div>
             <NavLink
                 exact
                 to="/joke"

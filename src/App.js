@@ -29,13 +29,21 @@ function App() {
       [name]: value,
     })
   }
-
+  function onClick() {
+    const DBlength = jokesDB.length;
+    if(jokeIndex === DBlength - 2 || jokeIndex < DBlength - 2) {
+      setJokeIndex(jokeIndex + 1);
+    }else {
+      setJokeIndex(0)
+    }
+}
   return (
     <div className="App">
       <Header />
+      <h1 className="arrow" onClick={onClick}>&#11157;</h1>
       <Switch>
         <Route exact path='/settings'>
-          <Settings setValue={setValue}/>
+          <Settings settings={settings} setValue={setValue}/>
         </Route>
         <Route exact path='/addajoke'>
           <NewJokeForm />

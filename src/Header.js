@@ -8,7 +8,7 @@ const linkStyles = {
     width: "150px",
     padding: "12px",
     margin: "0 6px 6px",
-    "border-radius": "10px",
+    borderRadius: "10px",
 }
 
 function Header() {

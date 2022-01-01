@@ -77,23 +77,18 @@ function Joke({ joke, settings }) {
                 }else return objLetter;
             })
             setArrayOfObjectsForLetters(workingArray)
-
-            console.log("working array:")
-            console.log(workingArray)
-            console.log("array of obj for letters")
-            console.log(arrayOfObjectsForLetters)
-
-        }else{
-
-            console.log("Oops!")
         }
     }
+    
     return (
-        <div className="border-joke"> 
-            <h1 className="font">{joke.question}</h1>
-            <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}/>
-            <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} />
-        </div>
+        <>
+            
+            <div className="border-joke"> 
+                <h1 className="font">{joke.question}</h1>
+                <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}/>
+                <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} />
+            </div>
+        </>
     )
 }
 
