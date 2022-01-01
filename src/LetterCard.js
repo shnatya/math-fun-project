@@ -1,10 +1,10 @@
 import React from "react";
 
-function LetterCard({obj, checkTotal}) {
+function LetterCard({obj, sendData}) {
 
     function onChange(event) {
         console.log(event.target.value)
-        checkTotal(event.target.value, obj)
+        sendData(event.target.value, obj)
     }
     return (
         <div className='margin border'>

@@ -2,10 +2,12 @@ import React from "react";
 import Circle from "./Circle";
 import LetterCard from "./LetterCard";
 
-function Answer({collectingObjects}) {
+function Answer({arrayOfObjectsForLetters}) {
+    console.log("array of objects for letters:")
+    console.log(arrayOfObjectsForLetters)
      return (
         <div className='flex-container'>
-        {collectingObjects.map((obj, index) =>
+        {arrayOfObjectsForLetters.map((obj, index) =>
             <Circle obj={obj} key={index} />)}
         </div>
      )

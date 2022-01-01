@@ -42,6 +42,9 @@ code {
   border-radius: 10px;
   border-color: cadetblue;
   size: flex;
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .bottom{
   padding-bottom: 100px;

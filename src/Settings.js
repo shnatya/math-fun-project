@@ -31,10 +31,10 @@ function Settings({setValue}) {
                 <option value="*">Multiplication</option>
             </select>
             <NavLink
-            exact
-            to="/joke"
-            style={linkStyles}
-            activeStyle={{background: "palevioletred",}}>
+                exact
+                to="/joke"
+                style={linkStyles}
+                activeStyle={{background: "palevioletred",}}>
                 Start
             </NavLink>
         </div>
