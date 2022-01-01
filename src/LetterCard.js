@@ -3,7 +3,8 @@ import React from "react";
 function LetterCard({obj, sendData}) {
 
     function onChange(event) {
-        console.log(event.target.value)
+        debugger
+        //console.log(event.target.value)
         sendData(event.target.value, obj)
     }
     return (

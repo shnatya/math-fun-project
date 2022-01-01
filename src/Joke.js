@@ -3,13 +3,16 @@ import Letters from "./Letters";
 import Answer from "./Answer";
 
 function Joke({joke, settings}) {
-    const [rightAsnwer, setRightAnswer] = useState(false)
+    const [rightAnswer, setRightAnswer] = useState(false)
     const [arrayOfObjectsForLetters, setarrayOfObjectsForLetters] = useState([])
     const [shuffledArray, setShuffledArray] = useState([])
 
     const {min, max, operation} = settings;
     const originalArrayOfLetters = joke.answer.split("")
     
+    console.log("rightAsnwer:")
+    console.log(rightAnswer)
+
     useEffect(() =>{
         const collectingObjects = originalArrayOfLetters.map((letter, index) => {
             //make objects for each letter and collect them in one array
@@ -61,22 +64,23 @@ function Joke({joke, settings}) {
 
     
     function checkTotal(answer, obj) {
+        debugger
         if(parseInt(answer) === obj.total) {
+            debugger
             console.log("Great!")
             setRightAnswer(true)
-            return true
         }else{
+            debugger
             console.log("Oops!")
             setRightAnswer(false)
-            return false
         }
+        debugger
     }
-    
     return (
         <div className="border-joke"> 
             <h2>{joke.question}</h2>
             <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}/>
-            <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters}/>
+            <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} rightAnswer={rightAnswer}/>
         </div>
     )
 }

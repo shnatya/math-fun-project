@@ -1,10 +1,11 @@
 import React from "react";
 
-function Circle({obj}) {
+function Circle({obj, rightAsnwer}) {
   const {letter, total} = obj;
+  debugger
     return (
         <div>
-            <h1 style={{visibility: "visible"}}>{letter}</h1>
+            {rightAsnwer ? <h1>{letter}</h1> : null}
             <h1>▁▁▁</h1>
             <h2>{total}</h2>
         </div>
