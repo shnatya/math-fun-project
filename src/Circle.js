@@ -1,13 +1,12 @@
 import React from "react";
 
-function Circle({obj, rightAsnwer}) {
+function Circle({ obj }) {
   const {letter, total} = obj;
-  debugger
     return (
         <div>
-            {rightAsnwer ? <h1>{letter}</h1> : null}
-            <h1>▁▁▁</h1>
-            <h2>{total}</h2>
+            {obj.rightAnswer ? <h1 className="font letter-bottom">{letter}</h1> : null}
+            <h1 style={{color: "palevioletred"}} className="dash-top">▁▁▁</h1>
+            <h2 className="font">{total}</h2>
         </div>
     )
 }

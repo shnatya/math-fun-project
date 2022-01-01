@@ -2,16 +2,13 @@ import React, { useEffect, useState } from "react";
 import Letters from "./Letters";
 import Answer from "./Answer";
 
-function Joke({joke, settings}) {
-    const [rightAnswer, setRightAnswer] = useState(false)
-    const [arrayOfObjectsForLetters, setarrayOfObjectsForLetters] = useState([])
+function Joke({ joke, settings }) {
+
+    const [arrayOfObjectsForLetters, setArrayOfObjectsForLetters] = useState([])
     const [shuffledArray, setShuffledArray] = useState([])
 
     const {min, max, operation} = settings;
     const originalArrayOfLetters = joke.answer.split("")
-    
-    console.log("rightAsnwer:")
-    console.log(rightAnswer)
 
     useEffect(() =>{
         const collectingObjects = originalArrayOfLetters.map((letter, index) => {
@@ -26,25 +23,25 @@ function Joke({joke, settings}) {
     
             if(operation === "+") {
                 let sum = minNumber + maxNumber;
-                Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {index: index},
-                                                   {max: maxNumber}, {total: sum}, {sign: "+"})
+                Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {id: index},
+                                                   {max: maxNumber}, {total: sum}, {sign: "+"}, {rightAnswer: false})
                 return objectForLetterCard;
             }
             else if(operation === "-") {
                 let diff = maxNumber - minNumber;
-                Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {index: index}, 
-                                                   {max: maxNumber}, {total: diff}, {sign: "-"})
+                Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {id: index}, 
+                                                   {max: maxNumber}, {total: diff}, {sign: "-"}, {rightAnswer: false})
                 return objectForLetterCard;
             }
             else if(operation === "*") {
                 let multi = maxNumber * minNumber;
-                Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {index: index},
-                                                    {max: maxNumber}, {total: multi}, {sign: "*"})
+                Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {id: index},
+                                                    {max: maxNumber}, {total: multi}, {sign: "*"}, {rightAnswer: false})
                 return objectForLetterCard;
             }
 
         })
-        setarrayOfObjectsForLetters(collectingObjects)
+        setArrayOfObjectsForLetters(collectingObjects)
 
         //shuffle letters of answer/ shuffle collecting objects
         const shuffledArray = [...collectingObjects]
@@ -64,23 +61,38 @@ function Joke({joke, settings}) {
 
     
     function checkTotal(answer, obj) {
-        debugger
+        
         if(parseInt(answer) === obj.total) {
-            debugger
+
             console.log("Great!")
-            setRightAnswer(true)
+            
+            const workingArray = arrayOfObjectsForLetters.map(objLetter => {
+    
+                if(obj.id === objLetter.id){
+        
+                    return {
+                        ...objLetter,
+                        rightAnswer: true,
+                    }
+                }else return objLetter;
+            })
+            setArrayOfObjectsForLetters(workingArray)
+
+            console.log("working array:")
+            console.log(workingArray)
+            console.log("array of obj for letters")
+            console.log(arrayOfObjectsForLetters)
+
         }else{
-            debugger
+
             console.log("Oops!")
-            setRightAnswer(false)
         }
-        debugger
     }
     return (
         <div className="border-joke"> 
-            <h2>{joke.question}</h2>
+            <h1 className="font">{joke.question}</h1>
             <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}/>
-            <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} rightAnswer={rightAnswer}/>
+            <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} />
         </div>
     )
 }

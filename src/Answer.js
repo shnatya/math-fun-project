@@ -1,12 +1,11 @@
 import React from "react";
 import Circle from "./Circle";
 
-function Answer({arrayOfObjectsForLetters, rightAnswer}) {
+function Answer({ arrayOfObjectsForLetters }) {
 
      return (
-        <div className='flex-container'>
-        {arrayOfObjectsForLetters.map((obj, index) =>
-            <Circle obj={obj} key={index} rightAnswer={rightAnswer}/>)}
+        <div className='circle-container'>
+        {arrayOfObjectsForLetters.map((obj, index) => <Circle obj={obj} key={index} />)}
         </div>
      )
 }
