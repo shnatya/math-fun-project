@@ -8,7 +8,8 @@ function Joke({ joke, settings }) {
     const [shuffledArray, setShuffledArray] = useState([])
 
     const {min, max, operation} = settings;
-    const originalArrayOfLetters = joke.answer.split("")
+    const {answer, question, id} = joke;
+    const originalArrayOfLetters = answer.split("")
 
     useEffect(() =>{
         const collectingObjects = originalArrayOfLetters.map((letter, index) => {
@@ -57,7 +58,7 @@ function Joke({ joke, settings }) {
          }
         setShuffledArray(shuffledArray)
 
-    }, [settings.min, settings.max, settings.operation]) 
+    }, [min, max, operation, id]) 
 
     
     function checkTotal(answer, obj) {
@@ -84,7 +85,7 @@ function Joke({ joke, settings }) {
         <>
             
             <div className="border-joke"> 
-                <h1 className="font">{joke.question}</h1>
+                <h1 className="font">{question}</h1>
                 <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}/>
                 <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} />
             </div>
