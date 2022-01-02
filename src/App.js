@@ -33,6 +33,7 @@ function App() {
   function handleReset() {
     setResetOn(false)
   }
+  //refresh input value for next joke and go to the next joke
   function handleNextJoke() {
     setResetOn(true)
 
@@ -42,7 +43,20 @@ function App() {
     }else {
       setJokeIndex(0)
     }
-}
+  }
+  function addNewJoke(newJoke) {
+    fetch("http://localhost:3000/jokes",{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newJoke),
+    })
+    .then(res => res.json())
+    .then(newItem => setJokesDB([...jokesDB, newItem])
+
+    )
+  }
   return (
     <div className="App">
       <Header />
@@ -51,7 +65,7 @@ function App() {
           <Settings settings={settings} setValue={setValue}/>
         </Route>
         <Route exact path='/addajoke'>
-          <NewJokeForm />
+          <NewJokeForm addNewJoke={addNewJoke}/>
         </Route>
         <Route exact path="/joke">
           <Joke joke={jokeToDisplay} settings={settings} handleNextJoke={handleNextJoke}

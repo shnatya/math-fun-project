@@ -1,96 +1,114 @@
 {
-    "jokes": [
-      {
-        "id": 1,
-        "question": "Who always comes to a picnic but is never invited?",
-        "answer": "the_ants"
-      },
-      {
-        "id": 2,
-        "question": "What do you call an alligator with a vest?",
-        "answer": "an_investigator"
-      },
-      {
-        "id": 3,
-        "question": "What kind of button won’t unbutton?",
-        "answer": "a_belly_button"
-      },
-      {
-        "id": 4,
-        "question": "What starts and ends with an E but contains only one letter?",
-        "answer": "an_envelope"
-      },
-      {
-        "id": 5,
-        "question": "What do you call a dinosaur that is sleeping?",
-        "answer": "a_dino-snore"
-      },
-      {
-        "id": 6,
-        "question": "What is a vampire’s favorite fruit?",
-        "answer": "a blood orange"
-      },
-      {
-        "id": 7,
-        "question": "What is a witch’s favorite subject in school?",
-        "answer": "spelling"
-      },
-      {
-        "id": 8,
-        "question": "What sound do hedgehogs make when they hug?",
-        "answer": "ouch"
-      },
-      {
-        "id": 9,
-        "question": "What do you call an old snowman?",
-        "answer": "water"
-      },
-      {
-        "id": 10,
-        "question": "What do you call a dog magician?",
-        "answer": "a labracadabrador"
-      },
-      {
-        "id": 11,
-        "question": "What do you call a group of disorganized cats?",
-        "answer": "a cat-tastrophe"
-      },
-      {
-        "id": 12,
-        "question": "Why did the computer go to the doctor?",
-        "answer": "it had a virus"
-      },
-      {
-        "id": 13,
-        "question": "What do you call a bear with no teeth?",
-        "answer": "a gummy bear"
-      },
-      {
-        "id": 14,
-        "question": "Why did the teddy bear say “no” to dessert?",
-        "answer": "because she was stuffed"
-      },
-      {
-        "id": 15,
-        "question": "What did the left eye say to the right eye?",
-        "answer": "between us, something smells"
-      },
-      {
-        "id": 16,
-        "question": "What’s worse than finding a worm in your apple?",
-        "answer": "finding half a worm"
-      },
-      {
-        "id": 17,
-        "question": "What time is it when the clock strikes 13?",
-        "answer": "time to get a new clock"
-      },
-      {
-        "id": 18,
-        "question": "What did the nose say to the finger?",
-        "answer": "stop picking on me"
-      }
-  
-    ]
-  }
-  
+  "jokes": [
+    {
+      "id": 1,
+      "question": "Who always comes to a picnic but is never invited?",
+      "answer": "ants"
+    },
+    {
+      "id": 2,
+      "question": "What do you call an alligator with a vest?",
+      "answer": "an_investigator"
+    },
+    {
+      "id": 3,
+      "question": "What kind of button won’t unbutton?",
+      "answer": "a_belly_button"
+    },
+    {
+      "id": 4,
+      "question": "What starts and ends with an E but contains only one letter?",
+      "answer": "an_envelope"
+    },
+    {
+      "id": 5,
+      "question": "What do you call a dinosaur that is sleeping?",
+      "answer": "a_dino_snore"
+    },
+    {
+      "id": 6,
+      "question": "What is a vampire’s favorite fruit?",
+      "answer": "a_blood_orange"
+    },
+    {
+      "id": 7,
+      "question": "What is a witch’s favorite subject in school?",
+      "answer": "spelling"
+    },
+    {
+      "id": 8,
+      "question": "What sound do hedgehogs make when they hug?",
+      "answer": "ouch"
+    },
+    {
+      "id": 9,
+      "question": "What do you call an old snowman?",
+      "answer": "water"
+    },
+    {
+      "id": 10,
+      "question": "What do you call a dog magician?",
+      "answer": "a_labracadabrador"
+    },
+    {
+      "id": 11,
+      "question": "What do you call a group of disorganized cats?",
+      "answer": "a_cat_tastrophe"
+    },
+    {
+      "id": 12,
+      "question": "Why did the computer go to the doctor?",
+      "answer": "it_had_a_virus"
+    },
+    {
+      "id": 13,
+      "question": "What do you call a bear with no teeth?",
+      "answer": "a_gummy_bear"
+    },
+    {
+      "id": 14,
+      "question": "Why did the teddy bear say “no” to dessert?",
+      "answer": "because_she_was_stuffed"
+    },
+    {
+      "id": 15,
+      "question": "What did the left eye say to the right eye?",
+      "answer": "between_us_something_smells"
+    },
+    {
+      "id": 16,
+      "question": "What’s worse than finding a worm in your apple?",
+      "answer": "finding_half_a_worm"
+    },
+    {
+      "id": 17,
+      "question": "What time is it when the clock strikes 13?",
+      "answer": "time_to_get_a_new_clock"
+    },
+    {
+      "id": 18,
+      "question": "What did the nose say to the finger?",
+      "answer": "stop_picking_on_me"
+    },
+    {
+      "question": "How are you?",
+      "answer": "Good",
+      "id": 19
+    },
+    {
+      "question": "What is your name?",
+      "answer": "Nastya",
+      "id": 20
+    },
+    {
+      "question": "How old are you?",
+      "answer": "twelve",
+      "id": 21
+    },
+    {
+      "question": "What do you like?",
+      "answer": "apples",
+      "id": 22
+    }
+  ]
+}

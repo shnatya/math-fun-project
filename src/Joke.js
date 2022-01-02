@@ -44,12 +44,11 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
         })
         setArrayOfObjectsForLetters(collectingObjects)
 
-        //shuffle letters of answer/ shuffle collecting objects
+        //shuffle letters of answer/ shuffle collecting objects (Fisher-Yates algorithm)
         const shuffledArray = [...collectingObjects]
         const arrayLength = shuffledArray.length;
-        console.log("I am here!")
+
         for(let i = arrayLength-1; i > 0; i--) {
-            console.log("And here!")
             let j = Math.floor(Math.random() * (i + 1));
     
             let temperateVar = shuffledArray[i];
@@ -62,7 +61,7 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
     function onClick() {
         handleNextJoke();
     }
-    
+    //check answer, if right, show letter
     function checkTotal(answer, obj) {
         if(parseInt(answer) === obj.total) {
             const workingArray = arrayOfObjectsForLetters.map(objLetter => {
