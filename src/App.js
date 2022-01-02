@@ -12,7 +12,7 @@ function App() {
   const [resetOn, setResetOn] = useState(false)
   const [settings, setSettings] = useState({
     min: 1,
-    max: 1000,
+    max: 100,
     operation: "+",
   })
 

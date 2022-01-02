@@ -7,7 +7,8 @@ const linkStyles = {
     color: "brown",
     width: "150px",
     padding: "12px",
-    margin: "0 6px 6px",
+    marginBottom: "50px",
+    marginLeft: "15px",
     borderRadius: "10px",
 }
 
@@ -16,7 +17,7 @@ function Header() {
     return (
         <div className="bottom">
             <h1 className="font font-size">
-                Fun Math 😻
+                Fun Math
             </h1>
             <NavLink
                 to="/settings"
