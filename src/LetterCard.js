@@ -1,8 +1,8 @@
 import React from "react";
 
-function LetterCard({obj, sendData}) {
-
+function LetterCard({ obj, sendData, resetOn, handleReset }) {
     function onChange(event) {
+        handleReset()
         sendData(event.target.value, obj)
     }
     return (
@@ -10,8 +10,10 @@ function LetterCard({obj, sendData}) {
             <form >
                 <h1 className="font">{obj.letter}</h1>
                 <h2 className='margin font'>{obj.max} {obj.sign} {obj.min}</h2>
-                <input onChange={onChange} className='margin input' type="text" name="answer" size='10' autoComplete="off"
-                        placeholder="?"/>
+                {resetOn ? <input onChange={onChange} className='margin input' type="text" name="answer"
+                                    autoComplete="off" placeholder="?" value=""/>
+                        : <input onChange={onChange} className='margin input' type="text" name="answer" 
+                                    autoComplete="off" placeholder="?"/>}
             </form>
         </div>
     )

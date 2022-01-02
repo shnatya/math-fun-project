@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Letters from "./Letters";
 import Answer from "./Answer";
 
-function Joke({ joke, settings, handleNextJoke }) {
+function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
 
     const [arrayOfObjectsForLetters, setArrayOfObjectsForLetters] = useState([])
     const [shuffledArray, setShuffledArray] = useState([])
@@ -57,22 +57,16 @@ function Joke({ joke, settings, handleNextJoke }) {
             shuffledArray[j] = temperateVar;
          }
         setShuffledArray(shuffledArray)
-
     }, [min, max, operation, id]) 
 
     function onClick() {
         handleNextJoke();
     }
-    function checkTotal(answer, obj) {
-        
-        if(parseInt(answer) === obj.total) {
-
-            console.log("Great!")
-            
-            const workingArray = arrayOfObjectsForLetters.map(objLetter => {
     
+    function checkTotal(answer, obj) {
+        if(parseInt(answer) === obj.total) {
+            const workingArray = arrayOfObjectsForLetters.map(objLetter => {
                 if(obj.id === objLetter.id){
-        
                     return {
                         ...objLetter,
                         rightAnswer: true,
@@ -82,14 +76,13 @@ function Joke({ joke, settings, handleNextJoke }) {
             setArrayOfObjectsForLetters(workingArray)
         }
     }
-    
     return (
         <>
-            
+            <h1 className="arrow" onClick={onClick}>&#11157;</h1>
             <div className="border-joke"> 
-                <input type="reset" className="arrow" onClick={onClick} value="Next" />
                 <h1 className="font">{question}</h1>
-                <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}/>
+                <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}
+                         resetOn={resetOn} handleReset={handleReset}/>
                 <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} />
             </div>
         </>

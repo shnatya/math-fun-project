@@ -9,6 +9,7 @@ import Joke from './Joke';
 function App() {
   const [jokesDB, setJokesDB] = useState([])
   const [jokeIndex, setJokeIndex] = useState(0)
+  const [resetOn, setResetOn] = useState(false)
   const [settings, setSettings] = useState({
     min: 1,
     max: 1000,
@@ -29,7 +30,12 @@ function App() {
       [name]: value,
     })
   }
+  function handleReset() {
+    setResetOn(false)
+  }
   function handleNextJoke() {
+    setResetOn(true)
+
     const DBlength = jokesDB.length;
     if(jokeIndex === DBlength - 2 || jokeIndex < DBlength - 2) {
       setJokeIndex(jokeIndex + 1);
@@ -48,7 +54,8 @@ function App() {
           <NewJokeForm />
         </Route>
         <Route exact path="/joke">
-          <Joke joke={jokeToDisplay} settings={settings} handleNextJoke={handleNextJoke}/>
+          <Joke joke={jokeToDisplay} settings={settings} handleNextJoke={handleNextJoke}
+                resetOn={resetOn} handleReset={handleReset}/>
         </Route>
       </Switch>
     </div>
