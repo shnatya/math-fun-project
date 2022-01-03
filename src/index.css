@@ -58,15 +58,24 @@ code {
   font-family:cursive;
   color: cadetblue;
 }
-.font-letter{
+.right-answer{
+  font-family:'Times New Roman', Times, serif;
+  color: palevioletred;
+}
+.wrong-answer{
   font-family:'Times New Roman', Times, serif;
   color: cadetblue;
+}
+.font{
+    font-family:'Times New Roman', Times, serif;
+    color: cadetblue;
 }
 .circle-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-top: 100px;
 }
 .letter-bottom{
   margin-bottom: 0px;
@@ -79,7 +88,7 @@ code {
 .font-size{
   font-size: 45px;
 }
-.lable{
+.label{
   font-size: 25px;
   font-family:'Times New Roman', Times, serif;
   color: cadetblue;
@@ -114,6 +123,8 @@ code {
   position: absolute;
   left: 46%;
   text-align: center;
+  font-size: 17px;
+  color: brown;
   display: table-cell;
   vertical-align: middle;
 }

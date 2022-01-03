@@ -74,15 +74,25 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
                 }else return objLetter;
             })
             setArrayOfObjectsForLetters(workingArray)
+            //update rightAnswer property in shuffled array
+            const workingShuffledArray = shuffledArray.map(objLetter => {
+                if(obj.id === objLetter.id){
+                    return {
+                        ...objLetter,
+                        rightAnswer: true,
+                    }
+                }else return objLetter;
+            })
+            setShuffledArray(workingShuffledArray)
         }
     }
     return (
         <>
             <h1 className="arrow" onClick={onClick}>&#11157;</h1>
             <div className="border-joke"> 
-                <h1 className="font-letter">{question}</h1>
+                <h1 className="font">{question}</h1>
                 <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}
-                         resetOn={resetOn} handleReset={handleReset}/>
+                         resetOn={resetOn} handleReset={handleReset} />
                 <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} />
             </div>
         </>

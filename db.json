@@ -109,6 +109,16 @@
       "question": "What is the stinkiest place but not a garbage can?",
       "answer": "it_is_the_nose",
       "id": 22
+    },
+    {
+      "question": "How are you?",
+      "answer": "OK",
+      "id": 23
+    },
+    {
+      "question": "45",
+      "answer": "45",
+      "id": 24
     }
   ]
 }

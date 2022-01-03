@@ -24,12 +24,12 @@ function Settings({ settings, setValue, handleAdded }) {
     return (
         <div className="settings">
             
-            <label className="lable">Min value: </label>
+            <label className="label">Min value: </label>
             <input onChange={handleValue} name="min" type="number" value={min} placeholder="Min value" style={{marginRight: "100px"}} />
-            <label className="lable">Max value: </label>
+            <label className="label">Max value: </label>
             <input onChange={handleValue} name="max" type="number" value={max} placeholder="Max value" />
             <div style={{display: "grid"}} className="settings">
-                <label style={{marginTop: "40px"}} className="lable">Choose an operation:</label>
+                <label style={{marginTop: "40px"}} className="label">Choose an operation:</label>
                 <select className="margin" onChange={handleValue} name="operation" value={operation} >
                     <option value="+">Addition</option>
                     <option value="-">Subtraction</option>
