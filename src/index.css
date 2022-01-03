@@ -50,8 +50,16 @@ code {
 .bottom{
   padding-bottom: 10px;
 }
-.font{
+.top{
+  padding-top: 100px;
+  color:palevioletred;
+}
+.font-fun-math{
   font-family:cursive;
+  color: cadetblue;
+}
+.font-letter{
+  font-family:'Times New Roman', Times, serif;
   color: cadetblue;
 }
 .circle-container {
@@ -73,7 +81,7 @@ code {
 }
 .lable{
   font-size: 25px;
-  font-family:cursive;
+  font-family:'Times New Roman', Times, serif;
   color: cadetblue;
 }
 .settings{
@@ -86,4 +94,26 @@ code {
   color:palevioletred;
   margin-left: 1350px;
   display: flex;
+}
+.input-joke{
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  height: 30px;
+  width: 300px;
+  text-align: center;
+  
+}
+.button-submit{
+  display: grid;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  height: 30px;
+  width: 100px;
+  position: absolute;
+  left: 46%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
 }

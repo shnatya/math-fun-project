@@ -16,7 +16,7 @@ function Header() {
 
     return (
         <div className="bottom">
-            <h1 className="font font-size">
+            <h1 className="font-fun-math font-size">
                 Fun Math
             </h1>
             <NavLink

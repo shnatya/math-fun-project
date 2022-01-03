@@ -91,23 +91,23 @@
       "answer": "stop_picking_on_me"
     },
     {
-      "question": "How are you?",
-      "answer": "Good",
+      "question": "1",
+      "answer": "2",
       "id": 19
     },
     {
-      "question": "What is your name?",
-      "answer": "Nastya",
+      "question": "4",
+      "answer": "4",
       "id": 20
     },
     {
-      "question": "How old are you?",
-      "answer": "twelve",
+      "question": "4",
+      "answer": "4",
       "id": 21
     },
     {
-      "question": "What do you like?",
-      "answer": "apples",
+      "question": "What is the stinkiest place but not a garbage can?",
+      "answer": "it_is_the_nose",
       "id": 22
     }
   ]

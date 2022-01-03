@@ -11,9 +11,10 @@ const linkStyles = {
     borderRadius: "10px",
 }
 
-function Settings({ settings, setValue }) {
-
+function Settings({ settings, setValue, handleAdded }) {
     const {min, max, operation} = settings
+
+    handleAdded()
 
     function handleValue(event){
         setValue(event.target.name, event.target.value)
@@ -24,7 +25,7 @@ function Settings({ settings, setValue }) {
         <div className="settings">
             
             <label className="lable">Min value: </label>
-            <input style={{marginRight: "100px"}} onChange={handleValue} name="min" type="number" value={min} placeholder="Min value" />
+            <input onChange={handleValue} name="min" type="number" value={min} placeholder="Min value" style={{marginRight: "100px"}} />
             <label className="lable">Max value: </label>
             <input onChange={handleValue} name="max" type="number" value={max} placeholder="Max value" />
             <div style={{display: "grid"}} className="settings">

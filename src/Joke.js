@@ -66,6 +66,7 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
         if(parseInt(answer) === obj.total) {
             const workingArray = arrayOfObjectsForLetters.map(objLetter => {
                 if(obj.id === objLetter.id){
+                    console.log("Right answer!")
                     return {
                         ...objLetter,
                         rightAnswer: true,
@@ -79,7 +80,7 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
         <>
             <h1 className="arrow" onClick={onClick}>&#11157;</h1>
             <div className="border-joke"> 
-                <h1 className="font">{question}</h1>
+                <h1 className="font-letter">{question}</h1>
                 <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}
                          resetOn={resetOn} handleReset={handleReset}/>
                 <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} />
