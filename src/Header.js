@@ -12,8 +12,12 @@ const linkStyles = {
     borderRadius: "10px",
 }
 
-function Header() {
+function Header({ handleAdded }) {
 
+    function handleClick() {
+        debugger
+        handleAdded()
+    }
     return (
         <div className="bottom">
             <h1 className="font-fun-math font-size">
@@ -22,6 +26,7 @@ function Header() {
             <NavLink
                 to="/settings"
                 exact
+                onClick={handleClick}
                 style={linkStyles}
                 activeStyle={{
                     background: "palevioletred",

@@ -37,7 +37,7 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
             else if(operation === "*") {
                 let multi = maxNumber * minNumber;
                 Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {id: index},
-                                                    {max: maxNumber}, {total: multi}, {sign: "*"}, {rightAnswer: false})
+                                                    {max: maxNumber}, {total: multi}, {sign: "x"}, {rightAnswer: false})
                 return objectForLetterCard;
             }
 
@@ -58,8 +58,10 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
         setShuffledArray(shuffledArray)
     }, [min, max, operation, id]) 
 
-    function onClick() {
-        handleNextJoke();
+    function onClick(event) {
+        console.log(event.target.id)
+        handleNextJoke(event.target.id);
+        
     }
     //check answer, if right, show letter
     function checkTotal(answer, obj) {
@@ -88,7 +90,10 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
     }
     return (
         <>
-            <h1 className="arrow" onClick={onClick}>&#11157;</h1>
+            <div className="arrow-order">
+                <h1 className="arrow-back" onClick={onClick} id="backward">&#11157;</h1>
+                <h1 className="arrow-for" onClick={onClick} id="forward">&#11157;</h1>
+            </div>
             <div className="border-joke"> 
                 <h1 className="font">{question}</h1>
                 <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}

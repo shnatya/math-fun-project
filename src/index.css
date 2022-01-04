@@ -99,11 +99,6 @@ code {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.arrow{
-  color:palevioletred;
-  margin-left: 1350px;
-  display: flex;
-}
 .input-joke{
   border-style: solid;
   border-width: 1px;
@@ -127,4 +122,17 @@ code {
   color: brown;
   display: table-cell;
   vertical-align: middle;
+}
+.arrow-order{
+  display: inline;
+}
+.arrow-back{
+  color:palevioletred;
+  margin-left: 1350px;
+  transform: rotate(0.5turn);
+  float: left;
+}
+.arrow-for{
+  color:palevioletred;
+  margin-left: 1350px;
 }

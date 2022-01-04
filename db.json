@@ -91,34 +91,9 @@
       "answer": "stop_picking_on_me"
     },
     {
-      "question": "1",
-      "answer": "2",
+      "question": "What did the fish say when he bumped into a concrete wall?",
+      "answer": "Dam!",
       "id": 19
-    },
-    {
-      "question": "4",
-      "answer": "4",
-      "id": 20
-    },
-    {
-      "question": "4",
-      "answer": "4",
-      "id": 21
-    },
-    {
-      "question": "What is the stinkiest place but not a garbage can?",
-      "answer": "it_is_the_nose",
-      "id": 22
-    },
-    {
-      "question": "How are you?",
-      "answer": "OK",
-      "id": 23
-    },
-    {
-      "question": "45",
-      "answer": "45",
-      "id": 24
     }
   ]
 }
