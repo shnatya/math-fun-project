@@ -1,6 +1,6 @@
 import React from "react";
 
-function Circle({ obj }) {
+function Letter({ obj }) {
   const {letter, total} = obj;
     return (
         <div>
@@ -11,4 +11,4 @@ function Circle({ obj }) {
     )
 }
 
-export default Circle
+export default Letter;

@@ -1,12 +1,11 @@
 import React from "react";
-import { useState } from "react/cjs/react.development";
-import Circle from "./Circle";
+import Letter from "./Letter";
 
 function Answer({ arrayOfObjectsForLetters }) {
     
      return (
         <div className='circle-container'>
-        {arrayOfObjectsForLetters.map((obj, index) => <Circle obj={obj} key={index} />)}
+        {arrayOfObjectsForLetters.map((obj, index) => <Letter obj={obj} key={index} />)}
         </div>
      )
 }

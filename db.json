@@ -94,6 +94,26 @@
       "question": "What did the fish say when he bumped into a concrete wall?",
       "answer": "Dam!",
       "id": 19
+    },
+    {
+      "question": "What type of music do rabbits like best?",
+      "answer": "Hip-Hop!",
+      "id": 20
+    },
+    {
+      "question": "How do you make a tissue dance?",
+      "answer": "You_put_a_little_boogie_in_it!",
+      "id": 21
+    },
+    {
+      "question": "Why did the paint go to the doctor?",
+      "answer": "becauseit did not have enough of color",
+      "id": 22
+    },
+    {
+      "question": "Why did the two 4’s skip lunch?",
+      "answer": "They_already_8!",
+      "id": 23
     }
   ]
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function LetterCard({ obj, sendData, resetOn, handleReset }) {
+function Card({ obj, sendData, resetOn, handleReset }) {
     const [inputValue, setInputValue] = useState("");
     const {min, max, sign, letter, rightAnswer} = obj;
 
@@ -30,4 +30,4 @@ function LetterCard({ obj, sendData, resetOn, handleReset }) {
     )
 }
 
-export default LetterCard;
+export default Card;

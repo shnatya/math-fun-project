@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Letters from "./Letters";
+import ShuffledCards from "./ShuffledCards";
 import Answer from "./Answer";
 
 function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
@@ -68,7 +68,6 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
         if(parseInt(answer) === obj.total) {
             const workingArray = arrayOfObjectsForLetters.map(objLetter => {
                 if(obj.id === objLetter.id){
-                    console.log("Right answer!")
                     return {
                         ...objLetter,
                         rightAnswer: true,
@@ -96,7 +95,7 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
             </div>
             <div className="border-joke"> 
                 <h1 className="font">{question}</h1>
-                <Letters shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}
+                <ShuffledCards shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}
                          resetOn={resetOn} handleReset={handleReset} />
                 <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} />
             </div>
