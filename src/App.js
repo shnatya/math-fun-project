@@ -67,6 +67,10 @@ function App() {
     setAdded(false)
   }
   function addNewJoke(newJoke) {
+    //seperate words in joke answer
+    const workingArray = newJoke.answer.split(" ")
+    newJoke.answer = workingArray.join("_")
+
     fetch("http://localhost:3000/jokes",{
       method: "POST",
       headers: {
@@ -77,7 +81,6 @@ function App() {
     .then(res => res.json())
     .then(newItem => {
       setJokesDB([...jokesDB, newItem])
-      //alert("Your joke has been added to the database!")
       setAdded(true)
     })
   }

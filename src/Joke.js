@@ -59,7 +59,6 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
     }, [min, max, operation, id]) 
 
     function onClick(event) {
-        console.log(event.target.id)
         handleNextJoke(event.target.id);
         
     }
