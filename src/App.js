@@ -25,7 +25,7 @@ function App() {
     )
     const jokeToDisplay = jokesDB[jokeIndex]
     
-  function setValue(name, value) {
+  function updateSettings(name, value) {
     setSettings({
       ...settings,
       [name]: value,
@@ -41,27 +41,18 @@ function App() {
     if(move === "forward") {
 
       if(jokeIndex === DBlength - 2 || jokeIndex < DBlength - 2) {
-  
-        console.log(jokeIndex + 1)
         setJokeIndex(jokeIndex + 1);
       }else {
-  
-        console.log(0)
         setJokeIndex(0)
       }
     }else{
 
       if(jokeIndex === 1 || jokeIndex > 1) {
-  
-        console.log(jokeIndex - 1)
         setJokeIndex(jokeIndex - 1);
       }else {
-  
-        console.log(DBlength-1)
         setJokeIndex(DBlength-1)
       }
     }
-    
   }
   function handleAdded() {
     setAdded(false)
@@ -89,7 +80,7 @@ function App() {
       <Header handleAdded={handleAdded} />
       <Switch>
         <Route exact path='/settings'>
-          <Settings settings={settings} setValue={setValue} />
+          <Settings settings={settings} updateSettings={updateSettings} />
         </Route>
         <Route exact path='/addajoke'>
           <NewJokeForm addNewJoke={addNewJoke} isAdded={isAdded}/>

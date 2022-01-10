@@ -26,6 +26,7 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
                 let sum = minNumber + maxNumber;
                 Object.assign(objectForLetterCard, {letter: letter}, {min: minNumber}, {id: index},
                                                    {max: maxNumber}, {total: sum}, {sign: "+"}, {rightAnswer: false})
+                console.log(objectForLetterCard)
                 return objectForLetterCard;
             }
             else if(operation === "-") {
@@ -60,11 +61,10 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
 
     function onClick(event) {
         handleNextJoke(event.target.id);
-        
     }
     //check answer, if right, show letter
-    function checkTotal(answer, obj) {
-        if(parseInt(answer) === obj.total) {
+    function checkTotal(usersTotal, obj) {
+        if(parseInt(usersTotal) === obj.total) {
             const workingArray = arrayOfObjectsForLetters.map(objLetter => {
                 if(obj.id === objLetter.id){
                     return {

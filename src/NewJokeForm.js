@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 function NewJokeForm({ addNewJoke, isAdded }) {
-    //const [] = useState("")
     const [newJoke, setNewJoke] = useState({
         question: "",
         answer: "",
@@ -20,6 +19,10 @@ function NewJokeForm({ addNewJoke, isAdded }) {
         else{
             addNewJoke(newJoke)
         }
+        setNewJoke({
+            question: "",
+            answer: "",
+        })
     }
     function onChange(event) {
         setNewJoke({

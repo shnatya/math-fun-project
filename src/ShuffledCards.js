@@ -1,8 +1,9 @@
+import React from "react";
 import Card from "./Card"
 
 function ShuffledCards({ shuffledArray, checkTotal, resetOn, handleReset }) {
-    function sendData(answer, obj) {
-        checkTotal(answer, obj)
+    function sendData(usersTotal, obj) {
+        checkTotal(usersTotal, obj)
     } 
     return (
         <div className='flex-container'>

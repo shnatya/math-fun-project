@@ -15,7 +15,6 @@ const linkStyles = {
 function Header({ handleAdded }) {
 
     function handleClick() {
-        debugger
         handleAdded()
     }
     return (

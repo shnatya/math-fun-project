@@ -11,12 +11,11 @@ const linkStyles = {
     borderRadius: "10px",
 }
 
-function Settings({ settings, setValue }) {
+function Settings({ settings, updateSettings }) {
     const {min, max, operation} = settings
 
     function handleValue(event){
-        setValue(event.target.name, event.target.value)
-        console.log(event.target.value)
+        updateSettings(event.target.name, event.target.value)
     }
     
     return (

@@ -1,13 +1,13 @@
 # Description of the app
 
-Fun Math App is made for kids, K - 12, to practice addition, subtraction, and multiplication. 
+Fun Math App is made for kids, K - 12, to practice addition, subtraction, and multiplication facts. 
 
 # Installation
 In the repository of this app, copy information about this repository in **Code** section.
 In your terminal, type *git clone* and paste what you have copied from GitHub.
 
 # How to use?
-First, users have to set up **Min** and **Max** values in **Settings**. By default, it's set up to 1 and 100 coonvetstvenno. Also, they can choose an operation to practice, or by default it is offered math problems on addition. After pushing Start, the app will show a joke starting from the first joke from the database. Letters of the answer are shuffled and by solving all math problems, users will find out the answer (finish the joke).
+First, users have to set up **Min** and **Max** values in **Settings**. By default, it's set up to 1 and 100 respectively. Also, they can choose an operation to practice, or by default it is offered math facts on addition. After pushing Start, the app shows the first joke from the database. Letters of the answer are shuffled and by solving all math facts, users decode the answer.
 
 Above the question part,on the right, there ara two arrows - **backward** and **forward** - to jump to the previous and to the next joke from the database. 
 
