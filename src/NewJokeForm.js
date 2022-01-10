@@ -5,6 +5,7 @@ function NewJokeForm({ addNewJoke, isAdded }) {
         question: "",
         answer: "",
     })
+   
     function onSubmit(event) {
         event.preventDefault()
         if((newJoke.question.length === 0) && (newJoke.answer.length === 0))  {
@@ -24,12 +25,14 @@ function NewJokeForm({ addNewJoke, isAdded }) {
             answer: "",
         })
     }
+
     function onChange(event) {
         setNewJoke({
             ...newJoke,
             [event.target.name]: event.target.value,
         })
     }
+
     return (
         <form onSubmit={onSubmit}>
             <input className="margin input-joke" onChange={onChange} type="text" name="question"
@@ -43,5 +46,5 @@ function NewJokeForm({ addNewJoke, isAdded }) {
         </form>
     )
 }
-//
+
 export default NewJokeForm;

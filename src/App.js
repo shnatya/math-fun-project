@@ -9,21 +9,22 @@ import Joke from './Joke';
 function App() {
   const [jokesDB, setJokesDB] = useState([])
   const [jokeIndex, setJokeIndex] = useState(0)
-  const [resetOn, setResetOn] = useState(false) //reset inputs in LetterCqrds
   const [isAdded, setAdded] = useState(false)
+  const [resetOn, setResetOn] = useState(false) //reset input fields in ShuffledCards
   const [settings, setSettings] = useState({
     min: 1,
     max: 100,
     operation: "+",
   })
 
-    useEffect(() => 
-        fetch("http://localhost:3000/jokes")
-        .then(res => res.json())
-        .then(data => setJokesDB(data))
-        , []
-    )
-    const jokeToDisplay = jokesDB[jokeIndex]
+  useEffect(() => 
+      fetch("http://localhost:3000/jokes")
+      .then(res => res.json())
+      .then(data => setJokesDB(data))
+      , []
+  )
+
+  const jokeToDisplay = jokesDB[jokeIndex]
     
   function updateSettings(name, value) {
     setSettings({
@@ -31,13 +32,16 @@ function App() {
       [name]: value,
     })
   }
+
   function handleReset() {
     setResetOn(false)
   }
-  //refresh input value for next joke and go to the next joke
+
+  //refresh input value for the next joke and go to the next joke
   function handleNextJoke(move) {
     setResetOn(true)
     const DBlength = jokesDB.length;
+    
     if(move === "forward") {
 
       if(jokeIndex === DBlength - 2 || jokeIndex < DBlength - 2) {
@@ -54,9 +58,7 @@ function App() {
       }
     }
   }
-  function handleAdded() {
-    setAdded(false)
-  }
+
   function addNewJoke(newJoke) {
     //seperate words in joke answer
     const workingArray = newJoke.answer.split(" ")
@@ -75,9 +77,15 @@ function App() {
       setAdded(true)
     })
   }
+
+  //Done! message disepears in 1 sec
+  useEffect(() => {
+  setTimeout(() => setAdded(false), 1000)
+  }, [isAdded])
+    
   return (
     <div className="App">
-      <Header handleAdded={handleAdded} />
+      <Header  />
       <Switch>
         <Route exact path='/settings'>
           <Settings settings={settings} updateSettings={updateSettings} />

@@ -3,7 +3,6 @@ import ShuffledCards from "./ShuffledCards";
 import Answer from "./Answer";
 
 function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
-
     const [arrayOfObjectsForLetters, setArrayOfObjectsForLetters] = useState([])
     const [shuffledArray, setShuffledArray] = useState([])
 
@@ -43,12 +42,12 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
             }
 
         })
+
         setArrayOfObjectsForLetters(collectingObjects)
 
         //shuffle letters of answer/ shuffle collecting objects (Fisher-Yates algorithm)
         const shuffledArray = [...collectingObjects]
         const arrayLength = shuffledArray.length;
-
         for(let i = arrayLength-1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
     
@@ -56,12 +55,15 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
             shuffledArray[i] = shuffledArray[j];
             shuffledArray[j] = temperateVar;
          }
+
         setShuffledArray(shuffledArray)
+
     }, [min, max, operation, id]) 
 
     function onClick(event) {
         handleNextJoke(event.target.id);
     }
+
     //check answer, if right, show letter
     function checkTotal(usersTotal, obj) {
         if(parseInt(usersTotal) === obj.total) {
@@ -73,7 +75,9 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
                     }
                 }else return objLetter;
             })
+
             setArrayOfObjectsForLetters(workingArray)
+
             //update rightAnswer property in shuffled array
             const workingShuffledArray = shuffledArray.map(objLetter => {
                 if(obj.id === objLetter.id){
@@ -83,9 +87,11 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
                     }
                 }else return objLetter;
             })
+            
             setShuffledArray(workingShuffledArray)
         }
     }
+
     return (
         <>
             <div className="arrow-order">
