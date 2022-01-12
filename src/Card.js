@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function Card({ obj, sendData, resetOn }) {
     const [inputValue, setInputValue] = useState("");
-    const {min, max, sign, letter, rightAnswer} = obj;
+    const { min, max, sign, letter, rightAnswer } = obj;
 
     useEffect(() => {
         if(resetOn === true){

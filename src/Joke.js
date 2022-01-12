@@ -7,8 +7,8 @@ function Joke({ joke, settings, handleNextJoke }) {
     const [shuffledArray, setShuffledArray] = useState([])
     const [resetOn, setResetOn] = useState(false) //reset input fields in ShuffledCards
 
-    const {min, max, operation} = settings;
-    const {answer, question, id} = joke;
+    const { min, max, operation } = settings;
+    const { answer, question, id } = joke;
     const originalArrayOfLetters = answer.split("")
 
     useEffect(() =>{
@@ -95,7 +95,7 @@ function Joke({ joke, settings, handleNextJoke }) {
             setShuffledArray(workingShuffledArray)
         }
     }
-
+    
     return (
         <>
             <div className="arrow-order">
@@ -110,6 +110,13 @@ function Joke({ joke, settings, handleNextJoke }) {
             </div>
         </>
     )
+}
+
+Joke.defaultProps =  {
+    joke: {
+    question: "",
+    answer: "",
+  }
 }
 
 export default Joke;

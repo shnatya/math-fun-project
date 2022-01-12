@@ -12,7 +12,7 @@ const linkStyles = {
 }
 
 function Settings({ settings, updateSettings }) {
-    const {min, max, operation} = settings
+    const { min, max, operation } = settings
 
     function handleValue(event){
         updateSettings(event.target.name, event.target.value)

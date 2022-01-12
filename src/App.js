@@ -7,7 +7,8 @@ import Settings from './Settings';
 import Joke from './Joke';
 
 function App() {
-  const [jokesDB, setJokesDB] = useState([])
+  const [jokesDB, setJokesDB] = useState([
+  ])
   const [jokeIndex, setJokeIndex] = useState(0)
   const [isAdded, setAdded] = useState(false)
   
@@ -21,8 +22,7 @@ function App() {
       fetch("http://localhost:3000/jokes")
       .then(res => res.json())
       .then(data => setJokesDB(data))
-      , []
-  )
+      , [])
 
   const jokeToDisplay = jokesDB[jokeIndex]
     

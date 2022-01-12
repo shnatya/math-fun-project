@@ -1,8 +1,8 @@
 import React from "react";
 
 function Letter({ obj }) {
-  const {letter, total} = obj;
-  
+  const { letter, total } = obj;
+
     return (
         <div>
             {obj.rightAnswer ? <h1 className="font letter-bottom">{letter}</h1> : null}
