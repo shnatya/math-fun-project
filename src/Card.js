@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Card({ obj, sendData, resetOn, handleReset }) {
+function Card({ obj, sendData, resetOn }) {
     const [inputValue, setInputValue] = useState("");
     const {min, max, sign, letter, rightAnswer} = obj;
 
@@ -11,7 +11,6 @@ function Card({ obj, sendData, resetOn, handleReset }) {
     }, [resetOn])
 
     function onChange(event) {
-        handleReset()
         sendData(event.target.value, obj)
 
         setInputValue(event.target.value)

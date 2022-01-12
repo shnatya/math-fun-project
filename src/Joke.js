@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import ShuffledCards from "./ShuffledCards";
 import Answer from "./Answer";
 
-function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
+function Joke({ joke, settings, handleNextJoke }) {
     const [arrayOfObjectsForLetters, setArrayOfObjectsForLetters] = useState([])
     const [shuffledArray, setShuffledArray] = useState([])
+    const [resetOn, setResetOn] = useState(false) //reset input fields in ShuffledCards
 
     const {min, max, operation} = settings;
     const {answer, question, id} = joke;
@@ -58,9 +59,12 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
 
         setShuffledArray(shuffledArray)
 
+        setResetOn(false)
+
     }, [min, max, operation, id]) 
 
     function onClick(event) {
+        setResetOn(true)
         handleNextJoke(event.target.id);
     }
 
@@ -87,7 +91,7 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
                     }
                 }else return objLetter;
             })
-            
+
             setShuffledArray(workingShuffledArray)
         }
     }
@@ -101,7 +105,7 @@ function Joke({ joke, settings, handleNextJoke, resetOn, handleReset }) {
             <div className="border-joke"> 
                 <h1 className="font">{question}</h1>
                 <ShuffledCards shuffledArray={shuffledArray} checkTotal={checkTotal} settings={settings}
-                         resetOn={resetOn} handleReset={handleReset} />
+                         resetOn={resetOn}  />
                 <Answer arrayOfObjectsForLetters={arrayOfObjectsForLetters} />
             </div>
         </>

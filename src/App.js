@@ -10,7 +10,7 @@ function App() {
   const [jokesDB, setJokesDB] = useState([])
   const [jokeIndex, setJokeIndex] = useState(0)
   const [isAdded, setAdded] = useState(false)
-  const [resetOn, setResetOn] = useState(false) //reset input fields in ShuffledCards
+  
   const [settings, setSettings] = useState({
     min: 1,
     max: 100,
@@ -33,15 +33,10 @@ function App() {
     })
   }
 
-  function handleReset() {
-    setResetOn(false)
-  }
-
   //refresh input value for the next joke and go to the next joke
   function handleNextJoke(move) {
-    setResetOn(true)
     const DBlength = jokesDB.length;
-    
+
     if(move === "forward") {
 
       if(jokeIndex === DBlength - 2 || jokeIndex < DBlength - 2) {
@@ -80,7 +75,10 @@ function App() {
 
   //Done! message disepears in 1 sec
   useEffect(() => {
-  setTimeout(() => setAdded(false), 1000)
+    const timerID = setTimeout(() => setAdded(false), 1000)
+    return function cleanUp(){
+      clearTimeout(timerID)
+  }
   }, [isAdded])
     
   return (
@@ -94,8 +92,7 @@ function App() {
           <NewJokeForm addNewJoke={addNewJoke} isAdded={isAdded}/>
         </Route>
         <Route exact path="/joke">
-          <Joke joke={jokeToDisplay} settings={settings} handleNextJoke={handleNextJoke}
-                resetOn={resetOn} handleReset={handleReset}/>
+          <Joke joke={jokeToDisplay} settings={settings} handleNextJoke={handleNextJoke} />
         </Route>
       </Switch>
     </div>
